@@ -7,7 +7,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {}
+class ViewController: UIViewController {
+  deinit {
+    print("Deiniting ViewController")
+  }
+}
 
 class PresentingVC: UIViewController {
   override func viewDidLoad() {
