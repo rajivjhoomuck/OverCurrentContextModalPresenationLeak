@@ -7,13 +7,25 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController {}
 
+class PresentingVC: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view.
+
+    definesPresentationContext = true
   }
 
-
+  deinit {
+    print("Deiniting PresentingVC")
+  }
 }
 
+class ModalVC: UIViewController {
+
+  @IBAction func dismiss() { dismiss(animated: true, completion: nil) }
+
+  deinit {
+    print("Deiniting ModalVC")
+  }
+}
